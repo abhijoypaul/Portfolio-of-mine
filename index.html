@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Premium Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Premium Portfolio</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Icons -->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<!-- Icons -->
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Inter',sans-serif;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
 
-    body{
+body{
   min-height:100vh;
   background:
     radial-gradient(circle at 80% 20%, rgba(255,180,80,.18), transparent 45%),
@@ -29,72 +29,72 @@
   overflow-x:hidden;
 }
 
-
-    /* Glass Utility */
-    .glass{
+/* Glass */
+.glass{
   background:rgba(255,255,255,.07);
   backdrop-filter:blur(22px);
   -webkit-backdrop-filter:blur(22px);
   border:1px solid rgba(255,255,255,.12);
-  box-shadow:
-    0 20px 40px rgba(0,0,0,.55),
-    inset 0 0 0 1px rgba(255,255,255,.04);
   border-radius:26px;
+  box-shadow:0 20px 40px rgba(0,0,0,.55);
 }
 
+/* Navigation */
+nav{
+  position:fixed;
+  bottom:24px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:10px;
+  padding:10px 14px;
+  background:rgba(0,0,0,.45);
+  backdrop-filter:blur(20px);
+  border-radius:999px;
+  z-index:100;
+}
 
-    /* Navigation */
-    nav{
-      position:fixed;
-      bottom:24px;
-      left:50%;
-      transform:translateX(-50%);
-      display:flex;
-      gap:10px;
-      padding:10px 14px;
-      z-index:100;
-    }
+nav button{
+  background:none;
+  border:none;
+  color:#fff;
+  padding:10px 18px;
+  border-radius:999px;
+  cursor:pointer;
+  transition:.3s;
+}
 
-    nav button{
-      background:transparent;
-      border:none;
-      color:#fff;
-      padding:10px 18px;
-      border-radius:999px;
-      cursor:pointer;
-      transition:.3s;
-    }
+nav button:hover,
+nav button.active{
+  background:#ffb300;
+  color:#000;
+}
 
-    nav button:hover,
-    nav button.active{
-      background:#ffb300;
-      color:#000;
-    }
-
-    /* Hero */
-    .hero{
+/* Hero */
+.hero{
+  max-width:1200px;
+  margin:auto;
   padding:140px 20px 100px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
   gap:80px;
 }
 
+.role{
+  color:#ffb300;
+  letter-spacing:3px;
+  font-size:13px;
+  margin-bottom:12px;
+}
 
-    .role{
-      color:#ffb300;
-      letter-spacing:3px;
-      font-size:13px;
-      margin-bottom:12px;
-    }
-
-    h1{
+h1{
   font-size:64px;
   font-weight:700;
-  letter-spacing:-1px;
 }
 
 h2{
-  font-size:28px;
-  font-weight:600;
-  letter-spacing:.3px;
+  font-size:26px;
+  margin-bottom:30px;
 }
 
 p{
@@ -103,36 +103,33 @@ p{
   opacity:.9;
 }
 
+.contact div{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+  margin-bottom:10px;
+}
 
-    .contact div{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-size:14px;
-      opacity:.85;
-      margin-bottom:10px;
-    }
+/* CTA */
+.cta{
+  margin-top:26px;
+  background:#ffb300;
+  color:#000;
+  border:none;
+  padding:14px 30px;
+  border-radius:999px;
+  font-weight:600;
+  cursor:pointer;
+}
 
-    .cta{
-      margin-top:26px;
-      background:#ffb300;
-      color:#000;
-      border:none;
-      padding:14px 30px;
-      border-radius:999px;
-      font-weight:600;
-      cursor:pointer;
-      transition:.3s;
-    }
-
-    .cta:hover{ transform:translateY(-3px); }
-
-    /* Portrait */
-    .portrait{
+/* Portrait */
+.portrait{
   width:380px;
   height:380px;
   border-radius:50%;
   margin:auto;
+  overflow:hidden;
 }
 
 .portrait img{
@@ -142,85 +139,76 @@ p{
   border-radius:50%;
 }
 
-      /* Fake background removal */
-      mask-image: radial-gradient(circle at center, black 55%, transparent 75%);
-      -webkit-mask-image: radial-gradient(circle at center, black 55%, transparent 75%);
-      filter: contrast(1.1) saturate(1.1);
-    }
+/* Sections */
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:80px 20px;
+}
 
-    /* Sections */
-    section{
-      max-width:1200px;
-      margin:auto;
-      padding:80px 20px;
-    }
+/* Skills */
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:20px;
+}
 
-    h2{
-      font-size:26px;
-      margin-bottom:30px;
-    }
+.skill{
+  padding:26px 18px;
+  text-align:center;
+  font-size:14px;
+  border-radius:20px;
+}
 
-    /* Skills */
-    .skills{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-      gap:20px;
-    }
+.skill:hover{
+  background:rgba(255,180,0,.12);
+}
 
-    .skill{
-      padding:22px;
-      text-align:center;
-      transition:.3s;
-    }
+/* Languages */
+.lang{margin-bottom:18px;}
+.bar{
+  height:6px;
+  background:#111;
+  border-radius:999px;
+  overflow:hidden;
+  margin-top:6px;
+}
+.bar span{
+  display:block;
+  height:100%;
+  background:#ffb300;
+  width:0;
+  transition:1.2s;
+}
 
-    .skill:hover{ transform:translateY(-6px) scale(1.03); }
+/* Timeline */
+.timeline{
+  border-left:2px solid #ffb300;
+  padding-left:30px;
+}
 
-    /* Languages */
-    .lang{ margin-bottom:18px; }
+.timeline .item{
+  padding:16px 22px;
+  margin-bottom:18px;
+  position:relative;
+}
 
-    .bar{
-      height:6px;
-      background:#111;
-      border-radius:999px;
-      overflow:hidden;
-      margin-top:6px;
-    }
+.timeline .item::before{
+  content:"";
+  position:absolute;
+  left:-41px;
+  top:22px;
+  width:12px;
+  height:12px;
+  background:#ffb300;
+  border-radius:50%;
+}
 
-    .bar span{
-      display:block;
-      height:100%;
-      width:0;
-      background:#ffb300;
-      transition:1.2s;
-    }
-
-    /* Timeline */
-    .timeline{
-      border-left:2px solid #ffb300;
-      padding-left:30px;
-    }
-
-    .item{ margin-bottom:20px; }
-
-    .item.show{
-      opacity:1;
-      transform:translateY(0);
-    }
-
-    /* Project */
-    .projects-grid{
+/* Projects */
+.projects-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
   gap:40px;
-}
-
-.project-card{
-  overflow:hidden;
-  transition:.4s ease;
-}
-
-.project-card:hover{
-  transform:translateY(-8px);
 }
 
 .project-media{
@@ -238,16 +226,6 @@ p{
 
 .project-content{
   padding:24px;
-}
-
-.project-content h3{
-  margin-bottom:12px;
-}
-
-.project-content p{
-  opacity:.85;
-  font-size:15px;
-  line-height:1.6;
 }
 
 .tech-tags{
@@ -268,311 +246,74 @@ p{
 .project-btn{
   display:inline-block;
   margin-top:10px;
-  color:#000;
   background:#ffb300;
+  color:#000;
   padding:10px 18px;
   border-radius:999px;
   text-decoration:none;
   font-weight:600;
-  transition:.3s;
 }
 
-.project-btn:hover{
-  transform:translateY(-2px);
+/* Responsive */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;}
+  h1{font-size:48px;}
 }
-
-
-    .mockup{
-      background:#111;
-      padding:30px;
-      display:flex;
-      justify-content:center;
-    }
-
-    /* Responsive */
-    @media(max-width:900px){
-      .hero,.project{ grid-template-columns:1fr; }
-      h1{ font-size:48px; }
-    }
-  </style>
+</style>
 </head>
+
 <body>
 
-  <!-- Navigation -->
-nav{
-  background:rgba(0, 0, 0, 0.45);
-  border-radius: 999px;
+<!-- HERO -->
+<div class="hero" id="home">
+  <div>
+    <div class="role">Software Developer and Video Designer</div>
+    <h1>Abhijoy<br>Paul</h1>
 
-  /* Glass effect (safe) */
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
-  /* Fallback for unsupported browsers */
-  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-}
-
-nav button{
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-
-  <!-- Hero -->
-  <div class="hero" id="home">
-    <div>
-      <div class="role">Software Developer and Video Designer</div>
-      <h1>Abhijoy<br>Paul</h1>
-      <div class="contact">
-        <div><i class='bx bx-envelope'></i> abhijoypaul21@gmail.com</div>
-        <div><i class='bx bxl-linkedin'></i> <a href="https://www.linkedin.com/in/abhijoypaul/" target="_blank" style="color:#fff;text-decoration:none">linkedin.com/in/abhijoypaul</a></div>
-        <div><i class='bx bx-phone'></i> +91 8336898123</div>
-        <div><i class='bx bx-map'></i> Kolkata, West Bengal</div>
-      </div>
-      <a href="mailto:abhijoypaul21@gmail.com" style="text-decoration:none"><button class="cta">Contact Me</button></a>
-    </div>
-
-    <div class="portrait glass">
-      <img src="./WhatsApp Image 2025-12-14 at 5.56.49 PM.jpeg" alt="Abhijoy Paul">
-    </div>
-  </div>
-
-  <!-- Skills -->
-.skill
-  {
-  padding:26px 18px;
-  font-size:14px;
-  letter-spacing:.3px;
-}
-.skill:hover{
-  background:rgba(255,180,0,.12);
-}
-
-  <section id="skills">
-    <h2>Tools & Skills</h2>
-    <div class="skills">
-      <div class="skill glass">HTML5</div>
-      <div class="skill glass">CSS3</div>
-      <div class="skill glass">Java</div>
-      <div class="skill glass">Python</div>
-      <div class="skill glass">C++</div>
-      <div class="skill glass">Blender</div>
-      <div class="skill glass">Cursor</div>
-      <div class="skill glass">Gen AI</div>
-      <div class="skill glass">AutoCAD</div>
-    </div>
-    </div>
-
-    <h2 style="margin-top:50px">Languages</h2>
-    <div class="lang">English<div class="bar"><span data-width="95%"></span></div></div>
-    <div class="lang">Hindi<div class="bar"><span data-width="80%"></span></div></div>
-    <div class="lang">Bengali<div class="bar"><span data-width="95%"></span></div></div></div>
-    <div class="lang">French<div class="bar"><span data-width="40%"></span></div></div></div>
-  </section>
-
-  <!-- Education -->
-  .timeline{
-  border-left:2px solid rgba(255,179,0,.6);
-}
-
-.timeline .item{
-  padding:16px 22px;
-  margin-bottom:18px;
-  position:relative;
-}
-
-.timeline .item::before{
-  content:"";
-  position:absolute;
-  left:-41px;
-  top:22px;
-  width:12px;
-  height:12px;
-  background:#ffb300;
-  border-radius:50%;
-}
-
-  <section id="education">
-    <h2>Education</h2>
-
-    <div class="item glass" style="margin-bottom:20px">
-      <strong>Bachelor of Technology (B.Tech) – Computer Science</strong><br>
-      VIT Bhopal University
-    </div>
-
-    <div class="item glass" style="margin-bottom:40px">
-      <strong>Schooling</strong><br>
-      The Future Foundation School
-    </div>
-
-    <h2 style="margin-top:40px">Certifications</h2>
-    <div class="timeline">
-      <div class="item">
-        <strong>Bachelor of Technology (B.Tech) in CSE(AIML)</strong><br> Ongoing
-      </div>
-
-      <div class="item">
-        <strong>Cursa Certified DBMS</strong><br> Issued Sep 2025<br><span style="opacity:.7">Skills: Database Management System (DBMS)</span>
-      </div>
-
-      <div class="item">
-        <strong>Data Science Course – Mastering the Fundamentals</strong><br> Scalar · Issued Sep 2025<br><span style="opacity:.7">Skills: Data Analysis</span>
-      </div>
-
-      <div class="item">
-        <strong>AWS – Solutions Architecture Job Simulation</strong><br> Forage · Issued Aug 2025
-      </div>
-
-      <div class="item">
-        <strong>J.P. Morgan – Software Engineering Job Simulation</strong><br> Forage · Issued Aug 2025
-      </div>
-
-      <div class="item">
-        <strong>Java (Basics)</strong><br> HackerRank · Issued Jul 2025<br><span style="opacity:.7">HackerRank Certification</span>
-      </div>
-
-      <div class="item">
-        <strong>C Programming Basics</strong><br> Simplilearn · Issued May 2025
-      </div>
-
-      <div class="item">
-        <strong>Java Course – Mastering the Fundamentals</strong><br> Scalar · Issued Sep 2025
-      </div>
-
-      <div class="item">
-        <strong>Python Essentials</strong><br> Vityarthi · Issued Apr 2025
-      </div>
-
-      <div class="item">
-        <strong>Fundamentals of AI & ML</strong><br> Vellore Institute of Technology · Issued Dec 2024
-      </div>
-
-      <div class="item">
-        <strong>MATLAB Certified</strong>
-      </div>
-    </div>
-  </section>
-
- <section id="project">
-  <h2>Featured Projects</h2>
-
-  <div class="projects-grid">
-
-    <!-- Project 1 -->
-    <div class="project-card glass">
-      <div class="project-media">
-        <video src="videos/blender-cinematic.mp4" controls></video>
-      </div>
-
-      <div class="project-content">
-        <h3>🎬 Cinematic Shot in Blender</h3>
-        <p>
-          A cinematic 3D animation project exploring lighting setups, camera
-          panning, depth of field, and render optimization using Blender.
-          Despite GPU crashes and hardware limits, the final output was
-          successfully rendered and optimized.
-        </p>
-
-        <div class="tech-tags">
-          <span>Blender 3D</span>
-          <span>Cycles Renderer</span>
-          <span>Lighting</span>
-          <span>Camera Animation</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="project-card glass">
-      <div class="project-media">
-        <img src="images/cad-project.png" alt="Text to CAD Project">
-      </div>
-
-      <div class="project-content">
-        <h3>🚀 Text & Voice to 2D CAD Generation</h3>
-        <p>
-          An AI-powered system that converts voice or text commands into precise
-          2D CAD drawings using NLP, speech recognition, and automated CAD
-          generation.
-        </p>
-
-        <div class="tech-tags">
-          <span>Python</span>
-          <span>NLP</span>
-          <span>Speech-to-Text</span>
-          <span>CAD Automation</span>
-        </div>
-
-        <a href="https://www.kaggle.com/code/divyanshrai28/notebook93ea00028b"
-           target="_blank"
-           class="project-btn">
-          View on Kaggle →
+    <div class="contact">
+      <div><i class='bx bx-envelope'></i> abhijoypaul21@gmail.com</div>
+      <div><i class='bx bxl-linkedin'></i>
+        <a href="https://www.linkedin.com/in/abhijoypaul/" target="_blank" style="color:#fff;text-decoration:none">
+          linkedin.com/in/abhijoypaul
         </a>
       </div>
+      <div><i class='bx bx-phone'></i> +91 8336898123</div>
+      <div><i class='bx bx-map'></i> Kolkata, West Bengal</div>
     </div>
 
-    <!-- Project 3 -->
-    <div class="project-card glass">
-      <div class="project-media">
-        <img src="images/inventory-manager.png" alt="Inventory Manager">
-      </div>
-
-      <div class="project-content">
-        <h3>📦 Inventory & Sales Management System</h3>
-        <p>
-          A web-based inventory and sales management system designed for small
-          shops, focusing on affordability and simplicity with role-based access
-          and local data storage.
-        </p>
-
-        <div class="tech-tags">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JavaScript</span>
-          <span>Local Storage</span>
-        </div>
-
-        <a href="https://abhijoypaul.github.io/Inventory-Manager/"
-           target="_blank"
-           class="project-btn">
-          Live Demo →
-        </a>
-      </div>
-    </div>
-
+    <a href="mailto:abhijoypaul21@gmail.com"><button class="cta">Contact Me</button></a>
   </div>
+
+  <div class="portrait glass">
+    <img src="./WhatsApp Image 2025-12-14 at 5.56.49 PM.jpeg" alt="Abhijoy Paul">
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2>Tools & Skills</h2>
+<div class="skills">
+  <div class="skill glass">HTML5</div>
+  <div class="skill glass">CSS3</div>
+  <div class="skill glass">Java</div>
+  <div class="skill glass">Python</div>
+  <div class="skill glass">C++</div>
+  <div class="skill glass">Blender</div>
+  <div class="skill glass">AutoCAD</div>
+</div>
+
+<h2 style="margin-top:50px">Languages</h2>
+<div class="lang">English<div class="bar"><span data-width="95%"></span></div></div>
+<div class="lang">Hindi<div class="bar"><span data-width="80%"></span></div></div>
+<div class="lang">Bengali<div class="bar"><span data-width="95%"></span></div></div>
+<div class="lang">French<div class="bar"><span data-width="40%"></span></div></div>
 </section>
 
-
 <script>
-  /* Smooth scroll */
-  document.querySelectorAll('nav button').forEach(btn=>{
-    btn.onclick=()=>{
-      document.getElementById(btn.dataset.link)
-      .scrollIntoView({behavior:'smooth'});
-      document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-    }
-  });
-
-  /* Animate language bars */
-  const bars=document.querySelectorAll('.bar span');
-  const observer=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        e.target.style.width=e.target.dataset.width;
-      }
-    })
-  },{threshold:.6});
-
-  bars.forEach(bar=>observer.observe(bar));
-
-  
+document.querySelectorAll('.bar span').forEach(bar=>{
+  bar.style.width = bar.dataset.width;
+});
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
