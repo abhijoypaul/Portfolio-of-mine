@@ -76,8 +76,14 @@
     }
 
     /* Hero */
-    .hero{
-  animation:fadeUp 1s ease forwards;
+   .hero{
+  max-width:1100px;
+  margin:0 auto;
+  padding:140px 30px 100px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:60px;
+  align-items:center;
 }
 
 @keyframes fadeUp{
@@ -166,6 +172,11 @@
     /* Sections */
     section{
   position:relative;
+}
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 30px;
 }
 
 section::before{
@@ -508,5 +519,6 @@ section::before{
 
 </body>
 </html>
+
 
 
