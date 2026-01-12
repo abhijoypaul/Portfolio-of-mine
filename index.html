@@ -333,99 +333,95 @@
     </div>
   </section>
 
-  <!-- Project -->
-  <section id="project">
-    <h2>Featured Projects</h2>
+ <section id="project">
+  <h2>Featured Projects</h2>
 
-    <!-- Project 1: Blender Cinematic -->
-    <div class="project glass" style="margin-bottom:60px">
-      <div>
+  <div class="projects-grid">
+
+    <!-- Project 1 -->
+    <div class="project-card glass">
+      <div class="project-media">
+        <video src="videos/blender-cinematic.mp4" controls></video>
+      </div>
+
+      <div class="project-content">
         <h3>🎬 Cinematic Shot in Blender</h3>
         <p>
-          Created my first cinematic shot in Blender, exploring lighting setups, camera panning,
-          depth of field, entity interaction, and camera animation. Faced multiple GPU crashes and
-          had to resume rendering mid-way, but the final output made the entire learning journey worth it.
+          A cinematic 3D animation project exploring lighting setups, camera
+          panning, depth of field, and render optimization using Blender.
+          Despite GPU crashes and hardware limits, the final output was
+          successfully rendered and optimized.
         </p>
-        <p style="color:#ffb300;margin-top:10px">
-          Blender 3D · Cycles Renderer · Cinematic Lighting · Render Optimization
-        </p>
-      </div>
-      <div class="mockup glass">
-        <video src="C:\Users\User\Videos\Screen Recordings\Screen Recording 2025-08-01 235036.mp4" controls style="width:300px;border-radius:10px"></video>
+
+        <div class="tech-tags">
+          <span>Blender 3D</span>
+          <span>Cycles Renderer</span>
+          <span>Lighting</span>
+          <span>Camera Animation</span>
+        </div>
       </div>
     </div>
 
-    <!-- Project 2: Text & Voice to CAD -->
-    <div class="project glass">
-      <div>
+    <!-- Project 2 -->
+    <div class="project-card glass">
+      <div class="project-media">
+        <img src="images/cad-project.png" alt="Text to CAD Project">
+      </div>
+
+      <div class="project-content">
         <h3>🚀 Text & Voice to 2D CAD Generation</h3>
         <p>
-          A challenging and rewarding project that converts text or voice commands into precise
-          2D CAD drawings. The system integrates speech recognition, NLP-based intent understanding,
-          and automated CAD generation, overcoming issues like voice inaccuracies and design mismatches
-          through iterative refinement.
+          An AI-powered system that converts voice or text commands into precise
+          2D CAD drawings using NLP, speech recognition, and automated CAD
+          generation.
         </p>
 
-        <p style="margin-top:14px"><strong>Tools & Technologies:</strong></p>
-        <ul style="opacity:.85;line-height:1.6;margin-left:18px">
-          <li>Speech-to-Text for voice command processing</li>
-          <li>Natural Language Processing (NLP)</li>
-          <li>Python for backend logic & automation</li>
-          <li>CAD Libraries / APIs for 2D drawing generation</li>
-          <li>GUI / Web Interface for user interaction</li>
-        </ul>
+        <div class="tech-tags">
+          <span>Python</span>
+          <span>NLP</span>
+          <span>Speech-to-Text</span>
+          <span>CAD Automation</span>
+        </div>
 
         <a href="https://www.kaggle.com/code/divyanshrai28/notebook93ea00028b"
            target="_blank"
-           style="display:inline-block;margin-top:18px;color:#ffb300;text-decoration:none;font-weight:600">
-          View Project on Kaggle →
+           class="project-btn">
+          View on Kaggle →
         </a>
       </div>
+    </div>
 
-      <div class="mockup glass">
-        <img src="./2D-CAD-Drawing-Services.jpg"
-             alt="2D CAD Floor Plan Output"
-             style="width:100%;border-radius:16px;object-fit:contain">
+    <!-- Project 3 -->
+    <div class="project-card glass">
+      <div class="project-media">
+        <img src="images/inventory-manager.png" alt="Inventory Manager">
+      </div>
+
+      <div class="project-content">
+        <h3>📦 Inventory & Sales Management System</h3>
+        <p>
+          A web-based inventory and sales management system designed for small
+          shops, focusing on affordability and simplicity with role-based access
+          and local data storage.
+        </p>
+
+        <div class="tech-tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Local Storage</span>
+        </div>
+
+        <a href="https://abhijoypaul.github.io/Inventory-Manager/"
+           target="_blank"
+           class="project-btn">
+          Live Demo →
+        </a>
       </div>
     </div>
-  </section>
 
-  <!-- Project 3: Inventory & Sales Management System -->
-<div class="project glass" style="margin-top:60px">
-  <div>
-    <h3>📦 Inventory & Sales Management System</h3>
-    <p>
-      A web-based inventory and sales management system designed to help small shops
-      and local businesses move away from manual record-keeping and Excel-based tracking.
-      The project focuses on <strong>affordability</strong> and <strong>simplicity</strong>,
-      enabling shop owners to efficiently manage products, track daily and monthly sales,
-      and maintain stock levels with ease.
-    </p>
-
-    <p>
-      Built using core web technologies, the system features a clean and intuitive
-      interface, role-based access for better control, and local data storage for
-      reliability—making it practical for real-world business use.
-    </p>
-
-    <p style="color:#ffb300;margin-top:10px">
-      HTML · CSS · JavaScript · Local Storage · Role-Based Access
-    </p>
-
-    <a href="https://abhijoypaul.github.io/Inventory-Manager/"
-       target="_blank"
-       style="display:inline-block;margin-top:18px;color:#ffb300;
-              text-decoration:none;font-weight:600">
-      View Live Project →
-    </a>
   </div>
-
-  <div class="mockup glass">
-    <img src="./Screenshot (291).png"
-         alt="Inventory Management System Preview"
-         style="width:100%;border-radius:16px;object-fit:contain">
-  </div>
-</div>
+</section>
 
 
 <script>
@@ -456,6 +452,7 @@
 
 </body>
 </html>
+
 
 
 
